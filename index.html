@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valentine Quiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Quicksand:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-blobs" aria-hidden="true">
+      <span class="blob blob-a"></span>
+      <span class="blob blob-b"></span>
+      <span class="blob blob-c"></span>
+    </div>
+
+    <div class="hearts-layer" id="hearts-layer" aria-hidden="true"></div>
+
+    <main class="app-shell">
+      <section class="card active" id="welcome-screen">
+        <div class="welcome-photo-wrap">
+          <img src="title-photo.jpg" alt="Us" class="welcome-photo" />
+        </div>
+        <p class="tag">Valentine's Day Special</p>
+        <h1>Couples Quiz, Valentines Day Edition!</h1>
+        <p class="lead">
+          See how well you know our relationship!
+        </p>
+        <button class="btn btn-primary" id="continue-btn">Continue</button>
+      </section>
+
+      <section class="card" id="quiz-screen">
+        <p class="tag" id="question-counter">Question 1 of 5</p>
+        <h2 id="question-text"></h2>
+        <div class="choices" id="choices"></div>
+        <div class="quiz-footer">
+          <span id="score-text">Score: 0</span>
+          <button class="btn btn-ghost" id="next-btn" disabled>Next</button>
+        </div>
+      </section>
+
+      <section class="card" id="result-screen">
+        <p class="tag">Quiz Complete</p>
+        <h2>You did amazing.</h2>
+        <p class="lead" id="result-copy"></p>
+        <button class="btn btn-primary" id="reveal-btn">Reveal Surprise</button>
+      </section>
+
+      <section class="card" id="valentine-screen">
+        <div class="finale-question-content" id="finale-question-content">
+          <p class="tag">Final Question</p>
+          <h2>Will you be my Valentine?</h2>
+          <p class="lead">You can only pick the best answer here.</p>
+          <div class="valentine-actions">
+            <button class="btn btn-primary" id="yes-btn">
+              Yes of course my handsome man who loves me and takes care of me 🙂
+            </button>
+            <button class="btn btn-ghost tricky" id="no-btn">No</button>
+          </div>
+          <p class="celebrate" id="celebrate-text" aria-live="polite"></p>
+        </div>
+
+        <div class="valentine-celebration" id="valentine-celebration" aria-hidden="true">
+          <img src="fireworks-photo.jpg" alt="Celebration" class="fireworks-photo" />
+          <canvas id="fireworks-canvas" aria-hidden="true"></canvas>
+          <div class="fireworks-overlay">
+            <h2>LETS GOO OUR 4th VALENTINES TOGETHER</h2>
+            <button class="fireworks-next-btn" id="fireworks-next-btn">Next</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen letter-screen" id="letter-screen">
+        <div class="letter-photo-collage" aria-hidden="true">
+          <img src="loveletter.JPG" alt="" class="letter-photo p1" onerror="this.style.display='none'" />
+          <img src="loveletter1.jpg" alt="" class="letter-photo p2" onerror="this.style.display='none'" />
+          <img src="loveletter2.jpg" alt="" class="letter-photo p3" onerror="this.style.display='none'" />
+          <img src="loveletter4.jpg" alt="" class="letter-photo p4" onerror="this.style.display='none'" />
+          <img src="loveletter5.jpg" alt="" class="letter-photo p5" onerror="this.style.display='none'" />
+        </div>
+        <p
+          class="love-letter-text"
+          id="love-letter-text"
+          data-full-text="Happy Valentine&#39;s Day My Love! You deserve the whole world and I can&#39;t wait to give it to you one day. Through all the past ups &amp; downs you never gave up on our relationship and im so thankful to have you in my life. No matter what you want to do with your life I will always love and support you and I will always be in your corner cheering you on. I love every single little thing about you Sophie and I can&#39;t wait to celebrate your admission to Michener when it comes. Happy Valentine&#39;s to the most beautiful girl in my life, I love you so much"
+        ></p>
+        <p class="letter-signature" id="letter-signature">Love, Aidan</p>
+      </section>
+    </main>
+
+    <div class="modal-backdrop" id="rules-modal" aria-hidden="true">
+      <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="rules-title">
+        <p class="tag">Heads up</p>
+        <h3 id="rules-title">If you get them all right, your partner owes you a surprise dinner!</h3>
+        <button class="btn btn-primary" id="start-btn">Start Quiz</button>
+      </section>
+    </div>
+    <div class="cinematic-transition" id="cinematic-transition" aria-hidden="true">
+      <p class="cinematic-text" id="cinematic-text"></p>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
